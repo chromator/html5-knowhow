@@ -1,0 +1,21 @@
+<html>
+<body>
+<input type="button" value="Click Me 1!" onclick="window.alert('Hi!')" />
+<input type="button" value="Click Me 2!" onclick="hi_and_bye(); for_nothing()" />
+<input type="button" value="Something" id="something">
+<script>
+	function hi_and_bye() {
+		alert("Hi and bye!!");
+	}
+	
+	function for_nothing() {
+		alert("Something for nothing");
+	}
+	
+	var something = document.getElementById("something");
+	something.onclick = for_nothing;
+</script>
+
+
+</body>
+</html>

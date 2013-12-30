@@ -1,0 +1,24 @@
+<script>
+var fruits = new Array("oranges","apples");
+var veggies = new Array("corn","peas");
+var fruits_n_veggies = fruits.concat(veggies);
+document.write(fruits_n_veggies,'  ',fruits_n_veggies.length);
+var fruits2 = new Array("oranges","apples","pears");
+var fruit_string = fruits2.join(":");   // becomes a string i.e join default is ','
+document.write("<br  />" + fruit_string);
+
+var fruits3 = new Array("oranges","apples","pears","Mango");
+alert(fruits3.pop()); // the array behaves like a stack
+document.write("--->"+fruits3+"<br/>");
+alert(fruits3.pop());
+alert(fruits3.pop());
+alert(fruits3); // empty
+fruits3.push("Mango");
+fruits3.push("Jamun");
+fruits3.push("Guava");
+alert(fruits3); 
+fruits3.reverse();
+alert(fruits3);
+fruits3.sort();
+alert(fruits3);
+</script>

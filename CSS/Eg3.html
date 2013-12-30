@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#grad1
+{
+height:200px;
+background: -webkit-linear-gradient(red, blue); /* For Safari/Chrome */
+background: -o-linear-gradient(red, blue); /* For Opera*/
+background: -moz-linear-gradient(red, blue); /* For Firefox */
+background: linear-gradient(red, blue); /* Standard syntax (must be last) */
+}
+
+#grad2
+{
+height:200px;
+background: -webkit-linear-gradient(left, red , blue); /* For Safari/Chrome */
+background: -o-linear-gradient(right, red, blue); /* For Opera*/
+background: -moz-linear-gradient(right, red, blue); /* For Firefox */
+background: linear-gradient(to right, red , blue); /* Standard syntax */
+}
+
+#grad3
+{
+height:200px;
+background: -webkit-linear-gradient(left top, red , blue); /* For Safari */
+background: -o-linear-gradient(bottom right, red, blue); /* For Opera*/
+background: -moz-linear-gradient(bottom right, red, blue); /* For Firefox */
+background: linear-gradient(to bottom right, red , blue); /* Standard syntax */
+}
+
+#grad4
+{
+height:200px;
+background: -webkit-linear-gradient(red, green, blue); /* For Safari */
+background: -o-linear-gradient(red, green, blue); /* For Opera*/
+background: -moz-linear-gradient(red, green, blue); /* For Firefox  */
+background: linear-gradient(red, green, blue); /* Standard syntax */
+}
+</style>
+</head>
+<body>
+
+<h3>Linear Gradient - Top to Bottom</h3>
+<p>This linear gradient starts at the top. It starts red, transitioning to blue:</p>
+
+<div id="grad1"></div>
+
+<h3>Linear Gradient - Left to Right</h3>
+<p>This linear gradient starts at left. It starts red, transitioning to blue:</p>
+
+<div id="grad2"></div>
+
+
+<h3>Linear Gradient - Diagonal</h3>
+<p>This linear gradient starts at the top left. It starts red, transitioning to blue:</p>
+
+<div id="grad3"></div>
+
+<h3>Linear Gradient - Top to Bottom</h3>
+<p>This linear gradient starts at the top left. It starts red, transitioning to green & blue:</p>
+
+<div id="grad4"></div>
+
+<p><strong>Note:</strong> Internet Explorer 9 and earlier versions do not support gradients.</p>
+
+</body>
+</html>

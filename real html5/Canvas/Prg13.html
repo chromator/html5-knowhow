@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Viewport Size Test</title>
+  <meta charset="utf-8">
+  <script type="text/javascript">
+    function resize_handler() {
+      var p = document.getElementById("msg");
+      var w = document.documentElement.clientWidth;
+      var h = document.documentElement.clientHeight;
+      p.innerHTML = w + "&times;" + h + " CSS pixels";
+    }
+  </script>
+</head>
+<body onResize="resize_handler()">
+  <p id="msg">Resize the window or zoom in/out.
+</body>
+</html>

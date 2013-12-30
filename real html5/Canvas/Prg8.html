@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <script>
+ 
+            window.onload = function(){
+                    var canvas = document.getElementById("myCanvas");
+                    var context = canvas.getContext("2d");
+		    var topLeftCornerX = 188;
+		    var topLeftCornerY = 50;
+		    var width = 200;
+		    var height = 100;
+		 
+		    
+		    
+		    context.beginPath();
+		    context.rect(topLeftCornerX, topLeftCornerY, width, height);
+		    context.fillStyle = "#8ED6FF";
+		    context.fill();
+		    context.lineWidth = 5;
+		    context.strokeStyle = "black";
+		    context.stroke();
+		    
+		    var centerX = 200;
+		    var centerY = 250;
+		    var radius = 35;
+		    context.beginPath();
+		    context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+		    context.fillStyle = "#8ED6FF";
+		    context.fill();
+		    context.lineWidth = 5;
+		    context.strokeStyle = "black";
+		    context.stroke();
+		    
+		    
+		    var centerX = 388;
+		    var centerY = 175;
+		    var radius = 70;
+		    var lineWidth = 5;
+		 
+		    context.beginPath();
+		    context.arc(centerX, centerY, radius, 0, Math.PI, false);
+		    context.closePath();
+		    context.lineWidth = lineWidth;
+		    context.fillStyle = "#8ED6FF";
+		    context.fill();
+		    context.strokeStyle = "black";
+		    context.stroke();
+				 
+            };
+ 
+        </script>
+    </head>
+    <body>
+        <canvas id="myCanvas" width="578" height="500">
+        </canvas>
+    </body>
+</html>

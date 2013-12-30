@@ -1,0 +1,23 @@
+<script language="javascript" type="text/javascript">
+	var person = new Object();
+	person.name = "Shakti";
+	person.height = "6ft";
+	
+	person.run = function() {
+		this.state = "running";
+		this.speed = "6km";
+		alert("called within run function "+person.name+" "+person.height+" "+person.state+" "+person.speed);
+	}
+	
+	person.drinkwater = function() {
+		alert(this.state);
+		this.state = "Drinking water while running ";
+		
+		alert("called within drinkwater function "+person.name+" "+person.height+" "+person.state+" "+person.speed);
+	}
+	
+	person.run();
+	person.drinkwater();
+	
+	alert("called outside of functions "+person.name+" "+person.height+" "+person.state+" "+person.speed);
+</script>

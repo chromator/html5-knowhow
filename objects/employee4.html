@@ -1,0 +1,33 @@
+<script>
+function employee(id, name) {
+	this.id = id;
+	this.name = name;
+	document.write('employee constructor called');
+}
+
+employee.prototype.work = function() {
+	document.write('Employee work in accenture for 9 hours <br>'+this.id);
+}
+
+employee.prototype.play = function() {
+	document.write('Employee have great time playing! <br>');
+}
+
+function hr() {
+	document.write('hr constructor <br>');
+	employee.call(this);
+}
+
+hr.prototype.work = function() {
+	employee.prototype.work(this);
+	Document.write('hr also work! <br>');
+}
+
+hr.prototype = new employee("123", "Sandeep");
+hr.prototype.constructor = hr;
+
+var hr = new hr();
+hr.work();
+hr.play();
+
+</script>

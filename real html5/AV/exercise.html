@@ -1,0 +1,21 @@
+<html>
+<head>
+	<title>Playing Webm file</title>
+</head>
+<body>
+	<video id="video_player" width="320" controls autobuffer >
+		<source src="big-buck-bunny_trailer.webm" type="video/webm" /> 
+	</video>
+	<button id="play">Play</button>
+	<button id="pause">Pause</button>
+	<button id="duration">Duration</button>
+	<div id="duration_details"></div>
+	
+	<script>
+		var player = document.getElementById('video_player');
+		document.getElementById('play').addEventListener('click', function() { player.play();}, false);
+		document.getElementById('pause').addEventListener('click', function() { player.pause();}, false);
+		document.getElementById('duration').addEventListener('click', function() { document.querySelector('#duration_details').textContent = player.duration;}, false);
+	</script>
+</body>
+</html>

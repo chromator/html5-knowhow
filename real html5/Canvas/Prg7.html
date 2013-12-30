@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <script>
+ 
+            window.onload = function(){
+               var canvas = document.getElementById("myCanvas");
+    var context = canvas.getContext("2d");
+ 
+    var rectWidth = 200;
+    var rectHeight = 100;
+    var rectX = canvas.width / 2 - rectWidth / 2;
+    var rectY = canvas.height / 2 - rectHeight / 2;
+ 
+    var cornerRadius = 50;
+ /*
+    context.beginPath();
+    context.moveTo(rectX, rectY);
+    context.lineTo(rectX + rectWidth - cornerRadius, rectY);
+    // context.arcTo(controlX,controlY,endX,endY,radius);
+    context.arcTo(rectX + rectWidth, rectY, rectX + rectWidth, 
+        rectY + cornerRadius, cornerRadius);
+    context.lineTo(rectX + rectWidth, rectY + rectHeight);
+ 
+    context.lineWidth = 5;
+    context.stroke();
+   */ 
+    
+    context.beginPath(); // begin custom shape
+    context.moveTo(170, 80);
+    context.bezierCurveTo(130, 100, 130, 150, 230, 150);
+    context.bezierCurveTo(250, 180, 320, 180, 340, 150);
+    context.bezierCurveTo(420, 150, 420, 120, 390, 100);
+    context.bezierCurveTo(430, 40, 370, 30, 340, 50);
+    context.bezierCurveTo(320, 5, 250, 20, 250, 50);
+    context.bezierCurveTo(200, 5, 150, 20, 170, 80);
+    //context.closePath(); // complete custom shape
+    context.lineWidth = 5;
+    context.strokeStyle = "#0000ff";
+    context.fillStyle = "#8ED6FF";
+    context.fill();
+    context.stroke();
+    
+            };
+ 
+        </script>
+    </head>
+    <body>
+        <canvas id="myCanvas" width="578" height="200">
+        </canvas>
+    </body>
+</html>

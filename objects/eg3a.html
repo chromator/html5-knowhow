@@ -1,0 +1,31 @@
+<script language="javascript">
+timObject = {
+	property1 : "Hello",
+	property2 : "Hmmmm",
+	property3 : ["mmm", 2, 3, 6, "kkkk"],
+	method1 : function() {alert('Method has been called '+this.property1)},
+	method2 : function() {alert('Value of property property[3] is '+this.property3[0])}
+};
+
+timObject.method1();
+timObject.method2();
+
+alert(timObject.property3[3]);
+
+var circle = {x : 0, y : 0, radiud : 2};
+
+var rectangle = {
+	upperleft : { x : 2, y : 2},
+	lowerright : { x : 4, y : 4}
+};
+
+alert(rectangle.upperleft.x);
+
+for(var tim in timObject) {
+	document.write(tim+":"+timObject[tim]+"<br>");
+}
+
+with(timObject) {
+	document.write("property1 : "+property1);
+}
+</script>

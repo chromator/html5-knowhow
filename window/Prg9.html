@@ -1,0 +1,20 @@
+<script>
+var rightnow= new Date();
+ document.write(rightnow);
+ document.write("<br /> Date:" + rightnow.getDate());
+ document.write("<br /> Day of week:" + rightnow.getDay());
+ document.write("<br /> Hours:" + rightnow.getHours());
+ document.write("<br /> Time:" + rightnow.getTime()); 
+   // in milliseconds since January 1, 1970, at midnight)
+   
+var   rightnow2 = new Date();
+var thenum= Date.parse("Jan 2, 1970")  // returns milliseconds
+rightnow2.setTime(thenum); // converts milliseconds to date object
+document.write("<br />" + rightnow2);
+document.write("Day of week:" + rightnow2.getDay());
+
+var rightnow3= new Date();
+var thedate= rightnow3.toGMTString();
+document.write("<br />" + rightnow3);
+   
+</script>

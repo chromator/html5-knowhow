@@ -1,0 +1,26 @@
+
+<body>
+<div id="greeting">
+<h1>Hello! Welcome!</h1>
+</div>
+<div id="content">
+This page talks about what I think about...
+</div>
+
+
+</body>
+
+<script>
+var greet = document.getElementById("greeting");
+var thename = window.prompt("Who is the greatest Indian ever?","");
+if (thename.length < 1) {
+thename = "Anonymous Visitor";
+}
+greet.innerHTML = "<h1>Hello " + thename + "! Welcome!</h1>";
+
+//window.open("prg4.html","my_window","width=400,height=300");
+//window.open("prg3.html","cool","width=300,height=200,menubar=yes");
+
+window.open("prg6.html","cool","width=300,height=200,directories=yes,location=yes,menubar=yes,scrollbars=yes,status=yes,toolbar=yes");
+
+</script>

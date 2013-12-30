@@ -1,0 +1,22 @@
+<script language="JavaScript1.4">
+function checkpostal(){
+var re5digit=/^\d{3}\D{3}$/ //regular expression defining a 5 digit number
+if (document.myform.myinput.value.search(re5digit)==-1) //if match failed
+alert("Please enter a valid 5 digit number inside form")
+else
+ alert ("Correct input made");
+
+/*
+ 
+  a.  ^ indicates the beginning of the string. Using a ^ metacharacter requires that the match start at the beginning.
+  b.  \d indicates a digit character and the {5} following it means that there must be 5 consecutive digit characters.
+  c.  $ indicates the end of the string. Using a $ metacharacter requires that the match end at the end of the string.
+*/
+}
+</script>
+
+<form name="myform">
+<input type="text" name="myinput" size=15>
+<input type="button" onClick="checkpostal()" value="check">
+
+</form>

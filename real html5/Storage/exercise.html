@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>Employee Database
+</title>
+</head>
+<script type="text/javascript" src="employee_db_fun.js"></script>
+<body onload="open_database();">
+	<h1>Employee Data</h1>
+	<table>
+		<tr>
+		<td>Employee No:</td>
+		<td><input type="text" id="emp_id"></td>
+		</tr>
+		
+		<tr>
+		<td>Employee Name:</td>
+		<td><input type="text" id="emp_name"></td>
+		</tr>
+		
+		<tr>
+		<td>Employee Dept:</td>
+		<td><input type="text" id="emp_dept"></td>
+		</tr>
+		
+		<tr>
+		<td>Employee Salary:</td>
+		<td><input type="text" id="emp_sal"></td>
+		</tr>
+	</table>
+	<button id="save_emp" >Save</button>
+	<button id="get_emp">Get Employee</button>
+	<script type="text/javascript">
+		document.getElementById('save_emp').addEventListener('click', saveEmployeeDetails, false);
+	
+		function getEmployeeDetails(id) {
+			var result = getRecord(id);
+			for (var i = 0, item = null; i < result.rows.length; i++) {
+              item = result.rows.item(i);
+              document.getElementById('results').innerHTML += 
+                  '<li><span contenteditable="true" onkeyup="updateRecord('+item['id']+', this)">'+
+                  item['text'] + '</span> <a href="#" onclick="deleteRecord('+item['id']+')">x</a></li>';
+            }
+		}
+		
+		function saveEmployeeDetails() {
+			var employee_id = document.querySelector('#emp_id').value;
+			var employee_name = document.querySelector('#emp_name').value;
+			var employee_dept = document.querySelector('#emp_dept').value;
+			var employee_sal = document.querySelector('#emp_sal').value;
+			
+			newRecord(employee_id, employee_name, employee_dept, employee_sal);
+		}
+	</script>
+	
+</body>
+</html>

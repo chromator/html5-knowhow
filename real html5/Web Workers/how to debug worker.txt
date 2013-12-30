@@ -1,0 +1,8 @@
+place html files in webapps in tomcat installation dir
+open in chrome
+open developer tools
+	check in right panel
+	web work
+	check the checkbox
+Run again or refresh web page
+You will get breakpoint on js file

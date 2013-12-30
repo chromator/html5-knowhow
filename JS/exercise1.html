@@ -1,0 +1,21 @@
+<html>
+<body>
+	<script>
+		function isPrimeNo(n) {
+			var is_prime = true;
+			for(i=2;i<=n/2;i++)
+			{
+				res=n%i;
+				if(res == 0)
+				{
+					console.log('It is divisible by '+i);
+					is_prime = false;
+					break;
+				}
+			}
+			return is_prime;
+		}
+	document.write("The number is prime no? "+isPrimeNo(81));
+	</script>
+</body>
+</html>

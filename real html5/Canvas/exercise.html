@@ -1,0 +1,54 @@
+<html>
+<head>
+	<title>Draw Circle </title>
+</head>
+
+<body>
+	
+	<script>
+	var radius = 0;
+	function increment_circles() {
+		if(radius < 100) {
+			radius += 10;
+			drawCircle("black")
+		}
+	}
+	
+	function erase_circle() {
+		if(radius > 0) {
+			drawCircle("white");
+			radius -= 10;
+		}
+	}
+	
+	function drawCircle(stokeColor) {
+		var canvas = document.getElementById("my_canvas");
+		var context = canvas.getContext("2d");
+		var centerX = canvas.width / 2;
+		var centerY = canvas.height / 2;
+		var lineWidth = 1;
+	 
+		if(stokeColor == "white") {
+			context.beginPath();
+			context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+			context.closePath();
+			context.lineWidth = lineWidth;
+			context.strokeStyle = stokeColor;
+			context.stroke();
+		}
+		context.beginPath();
+		context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+		context.closePath();
+		context.lineWidth = lineWidth;
+		context.strokeStyle = stokeColor;
+		context.stroke();	
+	}
+	</script>
+	<button id="get_circle" onclick="increment_circles();">Get Circle</button>
+	<button id="erase_circle" onclick="erase_circle();">Erase Circle</button>
+	<br/>
+	<canvas id="my_canvas" width="500" height="500">
+		
+	</canvas>
+</body>
+</html>

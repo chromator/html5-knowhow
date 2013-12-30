@@ -1,0 +1,36 @@
+<script>
+
+var s_list = new Array();
+s_list[0]="Ram";
+s_list[1]="Hari";
+s_list[2]="Gopi";
+s_list[3]="Ali";
+
+for(student in s_list) {
+ document.write(student + "<br />");
+}
+
+//Associative arrays
+
+var s_list= new Array(); 
+s_list["tall"]="Ram";
+s_list["cool"]="Hari";
+s_list["clever"]="John";
+s_list["attentive"]="Ali";
+s_list["sportive"] = "Vinod";
+s_list["studious"]= "Ajay";
+document.write("The tall one is " +s_list["tall"]+ "<br />");
+document.write("The cool one is " +s_list["cool"]+ "<br />");
+document.write("The clever one is " +s_list["clever"]+ "<br />");
+document.write("The attentive one is " +s_list["attentive"]+ "<br />");
+document.write(s_list[0]); //associative arrays require a key. Un-defined
+s_list.sort(); // has no effect on associative array
+document.write(s_list); // can only be accessed using - key-
+s_list.reverse(); // has no effect on associative array
+alert(s_list.length);  // no display
+s_list.push("Koyal");
+
+for (obj in s_list)
+ document.write(s_list[obj]);
+ 
+</script>

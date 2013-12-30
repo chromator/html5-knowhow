@@ -1,0 +1,41 @@
+<html>
+<body>
+	<script>
+		call_alert();
+		reallycool("amby", "valley");
+		reallycool("swift");
+		reallycool();
+		
+		function reallycool(coolcar, coolplace) {
+			document.write("My car is a "+ coolcar +", and I drive it to "+coolplace);
+		}
+		
+		function get_added_text() {
+			var textpart1 = "this is ";
+			var textpart2 = "fun!";
+			return textpart1 + textpart2;
+		}
+		
+		document.write(get_added_text());
+		
+		function show_message() {
+			window.alert("This is an alert");
+		}
+		
+		window.alert('I am first, hahaha');
+		window.alert('I am second');
+		
+		show_message();
+		
+		function update_alert() {
+			window.alert("This is update alert");
+		}
+		
+		function call_alert() {
+			update_alert();
+		}
+		
+		call_alert();
+	</script>
+</body>
+</html>

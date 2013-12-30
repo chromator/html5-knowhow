@@ -1,0 +1,25 @@
+<form>
+To find the area of a circle, input a radius:<br />
+ <input type="text" id="radius" />
+ <input type="button" value="Get the Area!" id="getarea" />
+</form>
+
+<script>
+var area_button = document.getElementById("getarea");
+area_button.onclick = function() {
+var rad = document.getElementById("radius").value;
+if (rad.length < 1) {
+window.alert("Please enter a radius!");
+return false;
+}
+else if (rad != (rad*1)) {
+window.alert("Radius must be numeric!");
+return false;
+}
+else {
+var the_area = Math.PI * (rad * rad);
+window.alert("The area is " + the_area + " square units. ");
+return false;
+}
+};
+</script>

@@ -1,0 +1,42 @@
+<html>
+<body>
+<script type="text/javascript">
+	var bannerImages = new Array();
+	bannerImages[0] = "banner1.jpg";
+	bannerImages[1] = "banner2.jpg";
+	bannerImages[2] = "banner3.jpg";
+	bannerImages[3] = "banner4.jpg";
+	
+	var randomImageIndex = Math.round(Math.random() * 3);
+	document.write('The random number is '+randomImageIndex);
+	document.write('<br/>');
+	document.write("<img alt=\"\" src=\""+bannerImages[randomImageIndex]+"\" >");
+	
+	// create and initialise array
+	var fullarray = new Array("One", "Two", "Three", "Four", "Five");
+	var sliceofArray = fullarray.slice(1, 4);
+	
+	document.write("<br> Sliced array");
+	document.write("<br>"+sliceofArray[0]);
+	document.write(sliceofArray[1]+"<br>");
+	document.write(sliceofArray[2]+"<br>");
+	
+	var arrayOne =  new Array("One", "Two", "Three", "Four", "Five");
+	var arrayTwo = new Array("ABC", "DEF", "GHI");
+	var arrayThree = new Array("john", "paul", "george", "ringo");
+	
+	var joinedArray = arrayOne.concat(arrayTwo, arrayThree);
+	document.write('Joined array has '+joinedArray.length+" elements <br/>");
+	document.write(joinedArray[0]+'<br>');
+	document.write(joinedArray[1]+'<br>');
+	
+	var arraySort = new Array("cabbage", "lemon", "apple", "pear", 24);
+	var sortedArray = arraySort.sort();
+	
+	document.write('Sorted array <br>');
+	document.write(sortedArray[0]);
+	document.write(sortedArray[1]);
+	document.write(sortedArray[2]);
+</script>
+</body>
+</html>

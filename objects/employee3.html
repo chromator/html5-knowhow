@@ -1,0 +1,18 @@
+<script>
+	var employee = new Object();
+	
+	employee.id = 123;
+	employee.name = "Ram";
+	employee.salary = 12500;
+	
+	employee.work = function() {
+		alert(this.name+'Employee also works');
+	}
+	
+	employee.talk = function() {
+		document.write(this.id+ "Employee talks");
+	}
+	
+	employee.work();
+	employee.talk();
+</script>

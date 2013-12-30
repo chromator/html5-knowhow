@@ -1,0 +1,26 @@
+<script language="javascript" type="text/javascript">
+function cat(name) {
+	this.name = name;
+	this.talk = function() {
+		alert( this.name + " say meeow!" )
+	}
+} 
+</script>
+
+<script language="javascript" type="text/javascript">
+
+cat.prototype.changeName = function(name) {
+	this.name = name;
+}
+cat1 = new cat("felix")
+cat1.talk() //alerts "felix says meeow!"
+
+cat2 = new cat("ginger")
+cat2.talk() //alerts "ginger says meeow!"
+
+
+firstCat = new cat("Buddha")
+firstCat.changeName("Mary")
+firstCat.talk() //alerts "Bill says meeow!"
+
+</script>

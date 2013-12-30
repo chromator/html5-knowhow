@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <script>
+ 
+    window.onload = function(){
+	    var canvas = document.getElementById("myCanvas");
+	    var context = canvas.getContext("2d");
+	 // if your line is 200px long and 10px wide, and you assign a round or square cap style, 
+	 //the resulting line will be 210px long because each cap adds 5px to each end of the line
+	    // butt line cap (top line)
+	    context.beginPath();
+	    context.moveTo(200, canvas.height / 2 - 50);
+	    context.lineTo(canvas.width - 200, canvas.height / 2 - 50);
+	    context.lineWidth = 20;
+	    context.strokeStyle = "#0000ff"; // line color
+	    context.lineCap = "butt";
+	    context.stroke();
+	 
+	    // round line cap (middle line)
+	    context.beginPath();
+	    context.moveTo(200, canvas.height / 2);
+	    context.lineTo(canvas.width - 200, canvas.height / 2);
+	    context.lineWidth = 20;
+	    context.strokeStyle = "#0000ff"; // line color
+	    context.lineCap = "round";
+	    context.stroke();
+	 
+	    // square line cap (bottom line)
+	    context.beginPath();
+	    context.moveTo(200, canvas.height / 2 + 50);
+	    context.lineTo(canvas.width - 200, canvas.height / 2 + 50);
+	    context.lineWidth = 20;
+	    context.strokeStyle = "#0000ff"; // line color
+	    context.lineCap = "square";
+	    context.stroke();
+   };
+ 
+        </script>
+    </head>
+    <body>
+        <canvas id="myCanvas" width="578" height="200">
+        </canvas>
+    </body>
+</html>

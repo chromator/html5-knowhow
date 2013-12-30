@@ -1,0 +1,13 @@
+<body>
+<script type="text/javascript">
+function stock_alert() {
+window.alert("Getting stock value?");
+}
+var stocktimer = window.setInterval("stock_alert()",2000);
+</script>
+Click the button below to end the endless barrage of alerts.<br />
+<form>
+<input type="button" value="Stop the stocktimer!"
+onclick="window.clearInterval(stocktimer);" />
+</form>
+</body>

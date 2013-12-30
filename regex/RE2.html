@@ -1,0 +1,54 @@
+<html>
+
+<script>
+
+ str="hello folks";
+ re=/o/; //this is a string, so it won't work
+ re=eval(re); //change it to an object
+ check=str.replace(re,"a");
+ alert (check);
+ 
+ str="hello folks";
+ re=/po/;
+ check=str.match(re);
+ alert (check);
+ 
+ str="hello folks";
+ re=/ /;
+ re=eval(re);
+ check=str.search(re);
+ alert (check);  // the location of first char searched
+ 
+ 
+ 
+ exp1= /rea/;
+ str1 = "bread";
+ 
+ exp2 = /rea/i 
+ str2 = "bReAd";
+ 
+ exp3 = /rea/g 
+ str3 = "bread bREAd bread";
+ 
+ exp4 = /rea/gi 
+ str4 = "bread bREAd bread";
+ 
+ re = eval(exp1);
+ check = str1.match(re);
+ alert(check);
+ 
+ re = eval(exp2);
+ check = str2.match(re);
+ alert(check);
+ 
+ re = eval(exp3);
+ check = str3.match(re);
+ alert(check);
+ 
+ re = eval(exp4);
+ check = str4.match(re);
+ alert(check);
+ 
+ 
+</script>
+</html>

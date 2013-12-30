@@ -1,0 +1,29 @@
+<body onload="window.alert('I am loading now!');">
+
+Enter your name: 
+<input type="text" id="txtbx" onfocus="my_call()" />
+<br/><br/>
+
+<input type="text" onblur="window.alert('Hey! Come back!')" /> <br/>
+then give this box focus to blur the first one:<br />
+
+<input type="text" />
+<br/>
+
+Are you cool? <br/>
+
+<select onchange="window.alert('Why did you change that?')">
+<option selected="selected">Yes</option>
+<option>No</option>
+<optionUndecided></option>
+</select>
+
+<br/>
+
+<a href="http://www.google.com" onclick="window.alert('Hey, you clicked me!');"
+	onmouseover="window.alert('I told you not to try to ckick me!');" >
+	Don't click me! </a>
+
+<script type="text/javascript" src="js_event.js" ></script>
+
+</body>

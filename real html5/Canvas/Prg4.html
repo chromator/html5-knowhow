@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <script>
+ 
+    window.onload = function(){
+	    var canvas = document.getElementById("myCanvas");
+	    var context = canvas.getContext("2d");
+	    
+	    // quadratic curve , png.
+	    var controlX = 188;
+	    var controlY = 0;
+	    var endX = 388;
+	    var endY = 150;
+	 
+	    context.moveTo(188, 150);
+	    context.quadraticCurveTo(controlX, controlY, endX, endY);
+	    context.lineWidth = 10;
+	    context.strokeStyle = "black"; // line color
+	    context.stroke();
+   };
+ 
+        </script>
+    </head>
+    <body>
+        <canvas id="myCanvas" width="578" height="200">
+        </canvas>
+    </body>
+</html>

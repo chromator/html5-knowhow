@@ -1,0 +1,50 @@
+<html>
+<head>
+	<title>Enter Employee Details</title>
+</head>
+
+<body>
+	<script type="text/javascript">
+	function validate() {
+		if(document.employee_details.emp_id.value == "") {
+			document.employee_details.emp_id.focus();
+			return false;
+		}
+		if(document.employee_details.emp_name.value == "") {
+			document.employee_details.emp_name.focus();
+			return false;
+		}
+		if(document.employee_details.emp_dept.value == "") {
+			document.employee_details.emp_dept.focus();
+			return false;
+		}
+		if(document.employee_details.emp_mail.value == "") {
+			document.employee_details.emp_mail.focus();
+			return false;
+		}
+		if(document.employee_details.emp_number.value == "") {
+			document.employee_details.emp_number.focus();
+			return false;
+		}
+		return true;
+	}
+	
+	</script>
+	
+	<form action="prg6a.html" onsubmit="return (validate());" name="employee_details">
+	<h2>Employee Details Form</h2>
+	<h3>Employee ID: </h3>
+	<input type="number" name="emp_id"/>
+	<h3>Employee Name: </h3>
+	<input type="text" name="emp_name"/>
+	<h3>Employee Department: </h3>
+	<input type="text" name="emp_dept"/>
+	<h3>Employee Mail ID: </h3>
+	<input type="email" name="emp_mail"/>
+	<h3>Employee Phone Number: </h3>
+	<input type="number" name="emp_number"/>
+	<br>
+	<input type="submit" value="Submit"/>
+	</form>
+</body>
+</html>

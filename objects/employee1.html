@@ -1,0 +1,18 @@
+<script language="javascript">
+function Employee(no, name, dept_no, salary, location) {
+	this.no = no;
+	this.name = name;
+	this.dept_no = dept_no;
+	this.salary = salary;
+	this.location = location;
+	this.work = work;
+}
+
+function work() {
+	document.write("Employee: "+this.name+" is working at "+this.location);
+}
+
+var employee = new Employee("1234", "Karan", "23", "20K", "Hadapsar");
+employee.work();
+
+</script>

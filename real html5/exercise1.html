@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+	<head>Color selection sample</head>
+	<body >
+		<script>
+			function color_selected() {
+				var color = document.getElementById('color_selector').value;
+				var textArea = document.getElementById('text_area');
+				textArea.style.backgroundColor = color;
+			}
+		</script>
+		<input type="color" onchange="color_selected();" id="color_selector" />
+		<textarea disabled="true" cols="10" rows="5" id="text_area" ></textarea>
+	</body>
+</html>

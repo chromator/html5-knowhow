@@ -1,0 +1,105 @@
+<html>
+<head>
+	<title>Calculator</title>
+</head>
+
+<body>
+	<script type="text/css">
+		input {
+			text-align : "right";
+		}
+	</script>
+
+	<script type="text/javascript">
+		var lVal = 0;
+		var last_operator = "";
+		
+		function set_input_number(value) {
+			var input_text = document.getElementById('input_field');
+			if(input_text.value.contains('undefined') || input_text.value == '0') {
+				input_text.value = "" + value;
+			}
+			else {
+				input_text.value = input_text.value + "" + value;
+			}
+		}
+		
+		function clear_input() {
+			document.getElementById('input_field').value = "";
+		}
+		
+		function clear_all() {
+			clear_input();
+			lVal = 0;
+			rVal = 0;
+			last_operator = "";
+		}
+		
+		function operator_pressed(operator) {
+			var result = 0.0;
+			var input_text = document.getElementById('input_field');
+			if(lVal == 0) {
+				lVal = parseFloat(input_text.value);
+			}
+			else {
+				rVal = parseFloat(input_text.value);
+					switch(last_operator) {
+						case '/' :
+							result = lVal / rVal;
+							break;
+							
+						case '*' :
+							result = lVal * rVal;
+							break;
+							
+						case '-' :
+							result = lVal - rVal;
+							break;
+							
+						case '+' :
+							result = lVal - rVal;
+							break;
+					}
+			}
+			if(operator == '=') {
+				lVal = result;
+				input_text.value = result;
+				last_operator = "";
+			}
+			else {
+				clear_input();
+				last_operator = operator;
+			}
+		}
+	</script>
+	<input type="number" disabled="true" text-align="right" id="input_field" />
+	
+	<table >
+		<tr>
+			<td><input type="button" value="7" onclick="set_input_number(value);" /></td>
+			<td><input type="button" value="8" onclick="set_input_number(value);"/></td>
+			<td><input type="button" value="9" onclick="set_input_number(value);"/></td>
+			<td><input type="button" value="/" onclick="operator_pressed(value);" /></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="4" onclick="set_input_number(value);" /></td>
+			<td><input type="button" value="5" onclick="set_input_number(value);" /></td>
+			<td><input type="button" value="6" onclick="set_input_number(value);" /></td>
+			<td><input type="button" value="*" onclick="operator_pressed(value);" /></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="1" onclick="set_input_number(value);" /></td>
+			<td><input type="button" value="2" onclick="set_input_number(value);" /></td>
+			<td><input type="button" value="3" onclick="set_input_number(value);" /></td>
+			<td><input type="button" value="-" onclick="operator_pressed(value);" /></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><input type="button" value="0" onclick="set_input_number(value);" /></td>
+			<td><input type="button" value="C" onclick="clear_all()"/></td>
+			<td><input type="button" value="+" onclick="operator_pressed(value);"/></td>
+			<td><input type="button" value="=" onclick="operator_pressed(value);"/></td>
+		</tr>
+	</table>
+</body>
+</html>

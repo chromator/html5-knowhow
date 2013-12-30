@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#grad1
+{
+height:150px;
+width:200px;
+background: -webkit-radial-gradient(red, green, blue); /* Safari */
+background: -o-radial-gradient(red, green, blue); /* For Opera*/
+background: -moz-radial-gradient(red, green, blue); /* For Firefox */
+background: radial-gradient(red, green, blue); /* Standard syntax (must be last) */
+}
+
+#grad2
+{
+height:200px;
+background: -webkit-linear-gradient(left,rgba(255,0,0,0),rgba(255,0,0,1)); /*Safari*/
+background: -o-linear-gradient(right,rgba(255,0,0,0),rgba(255,0,0,1)); /*Opera*/
+background: -moz-linear-gradient(right,rgba(255,0,0,0),rgba(255,0,0,1)); /*Fx*/
+background: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1)); /*Standard*/
+} 
+</style>
+</head>
+<body>
+
+<h3>Radial Gradient - Evenly Spaced Color Stops</h3>
+<div id="grad1"></div>
+
+<h3>Transparent - Gradient</h3>
+<div id="grad2"></div>
+
+<p><strong>Note:</strong> Internet Explorer 9 and earlier versions do not support gradients.</p>
+
+</body>
+</html>

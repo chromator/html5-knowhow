@@ -1,0 +1,36 @@
+<html>
+<body>
+	<script>
+		function check_alert(pcheck, car) {
+			window.alert('You make $'+pcheck+' and have a car '+car);
+		}
+		check_alert();
+		
+		function check_alert2(pcheck, car) {
+			if(pcheck && car) {
+				window.alert('You make $'+pcheck+' and have a car '+car);
+			}
+			else {
+				window.alert('Parameters are missing!');
+			}
+		}
+		
+		check_alert2();
+		
+		var get_func = function send_alert(data) {
+			var my_num = 1;
+			document.write(my_num, data);
+			return data+"Rice with mung daal"
+		}
+		
+		document.write(get_func);
+		document.write('<br>');
+		
+		var ret_val = get_func("rajma chawal");
+		document.write(ret_val);
+		
+		get_func("testing");
+		send_alert("test2");
+	</script>
+</body>
+</html>
