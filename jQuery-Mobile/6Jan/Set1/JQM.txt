@@ -1,0 +1,12 @@
+p. Different level of support for different browsers : A,B & C.
+p. A grade -> all , B grade -> No Ajax Navigation support, C grade minimal support.
+p. Opera emulator
+p. Single html can contain multiple pages.
+p. In JQM Wrapper for content is auto added.
+p. Builds upon JQUI.
+p. Need Opera Mobile Emulator.
+p. In JQM widgets don't have to be created explicity.
+p. Mouse events are synthesized with touch events (i.e generates eqv fake mouse events)
+p. Tap event occurs in d/t browsers (Browsers that do not support touch).
+p. Tap event is better than click because it's not synthesized(occurs quickly).
+p.
