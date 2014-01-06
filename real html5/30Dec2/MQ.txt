@@ -1,0 +1,15 @@
+External stylesheet:
+
+a. <link rel="stylesheet" type="text/css" href="smallscreen.css" media="only screen and (max-width: 480px)" />
+
+Imported stylesheet within the <style> element:
+
+b. @import "smallscreen.css" only screen and (max-width: 480px);
+
+Within the <style> element as a media rule:
+
+c. <style type="text/css">
+  @media only screen and (max-width: 480px){
+    /* rules defined inside here are only applied to browsers that support CSS media queries and the browser window is 480px or smaller */
+  }
+</style>
