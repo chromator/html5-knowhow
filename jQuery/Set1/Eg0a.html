@@ -1,0 +1,22 @@
+<html>
+
+<script src="jquery-1.9.1.js">
+</script>
+
+
+<script language="javascript" >
+ function Document_readyFn( jQuery ) {
+   alert('Document --> Hello World');
+ }
+
+function Window_readyFn( jQuery ) {
+   alert('Window Load --> Hello World');
+}
+
+$(window ).load( Window_readyFn );
+$(document ).ready( Document_readyFn );
+
+// order --> Document --> Window 
+</script>
+
+</html>

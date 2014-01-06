@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>the title</title>
+   <script type="text/javascript" 
+   src="jquery.js"></script>
+   <script type="text/javascript" language="javascript">
+   $(document).ready(function() {
+      $("#start").click(function(event){
+      });
+   });
+   </script>
+</head>
+<body>
+   <p>Click on the button to start animation</p>
+   <div id="shape_selector" >
+        <h2>Shape</h2>
+		<select>
+			<option value="circle">Circle</option>
+			<option value="rectangle">Rectangle</option>
+			<option value="triangle">triangle</option>
+		</select>
+		<h2>Count</h2>
+		<input type="number" min="2" max="5"></input>
+   </div>
+   <input type="button" id="start" value="Start" />
+   <div></div>
+</body>
+</html>

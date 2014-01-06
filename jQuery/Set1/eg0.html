@@ -1,0 +1,33 @@
+<html>
+
+<h1>
+  This is h1 tag 
+</h1>
+
+<h2>
+ This is h2 tag
+</h2>  
+
+<script src="jquery-1.9.1.js">
+
+ 
+</script>
+<script language="javascript" >
+ $(document).ready(function () {   
+    alert('Hello World');
+   $('h1').remove();
+  // document.write('Hello World'); // will overwrite
+   console.log("ready!");
+  
+  });
+  
+ jQuery(document).ready(function () {   
+    alert('Hello World');
+   jQuery('h2').remove();
+  // document.write('Hello World'); // will overwrite
+   console.log("ready in jQuery!");
+  
+  });
+</script>
+
+</html>

@@ -1,0 +1,66 @@
+<html>
+<head>
+  
+  
+  <link href="runnable.css" rel="stylesheet" />
+  <!-- Load jQuery and the validate plugin -->
+  <script src="jquery.js"></script>
+  <script src="jquery.validate.js"></script>
+  
+  <!-- jQuery Form Validation code -->
+  <script>
+  
+  // When the browser is ready...
+  $(function() {
+  
+    // Setup form validation on the #register-form element
+    $("#register-form").validate({
+    
+        // Specify the validation rules
+        rules: {
+            empId: "required",
+            empName: "required",
+            empMail: {
+                required: true,
+                email: true
+            },
+            empSalary: "required",
+			empManagerId: "required"
+        },
+        
+        // Specify the validation error messages
+        messages: {
+			empId: "Please enter employee ID",
+            empName: "Please enter employee name",
+            empMail: {
+                required: "Please enter employee mail id",
+                email: "Please enter valid employee mail id"
+            },
+            empSalary: "Please enter salary details",
+			empManagerId: "Please enter manager ID"
+        },
+        
+        submitHandler: function(form) {
+            form.submit();
+        }
+    });
+
+  });
+  
+  </script>
+</head>
+<body>
+  <h1>Employee Form</h1>
+
+  <!--  The form that will be parsed by jQuery before submit  -->
+  <form action="" method="post" id="register-form" novalidate="novalidate">
+  
+    <div class="label">Employee No.</div><input type="number" id="empId" name="empId" /><br />
+    <div class="label">Employee Name</div><input type="text" id="empName" name="empName" /><br /><br/>
+	<div class="label">Email</div><input type="text" id="empMail" name="empMail" /><br />
+    <div class="label">Salary</div><input type="number" id="empSalary" name="empSalary" /><br />
+	<div class="label">Manager ID</div><input type="number" id="empManagerId" name="empManagerId" /><br />
+    <div style="margin-left:140px;"><input type="submit" name="submit" value="Submit" /></div>    
+  </form>  
+</body>
+</html>

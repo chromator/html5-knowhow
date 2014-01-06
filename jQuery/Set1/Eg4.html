@@ -1,0 +1,23 @@
+<!-- Putting jQuery into no-conflict mode -->
+<html>
+
+<h1> This is h1 Tag </h1>
+<h2> This is h2 Tag </h2>
+<!-- <script src="prototype.js"></script> -->
+<script src="jquery-1.9.1.js"></script>
+
+
+<script>
+// $j is now an alias to the jQuery function;
+// creating the new alias is optional
+var $j = jQuery.noConflict();
+$j(document).ready(function(){
+$j("h2").hide();
+});
+
+
+ jQuery(document).ready(function($){
+// You can use the locally-scoped $ in here as an alias to jQuery
+   alert('in jQuery');
+});
+</script>

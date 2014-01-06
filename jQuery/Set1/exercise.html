@@ -1,0 +1,21 @@
+
+<html>
+
+<a href="www.google.com" id="google"> This is h1 Tag </a>
+<a href="yahoo.com" name="myAnchor" id="yahoo"> This is h2 Tag </a>
+
+<script src="jquery-1.9.1.js"></script>
+
+<script>
+
+
+// $("a").attr( "href", "eg2.html" );
+$( "a#google" ).attr({
+title: "all titles are the same too!",
+href: "eg3.html"
+});
+alert ('href :' + $( "a#google" ).attr('href') + '\n' + 'title:' + $( "a#google" ).attr("title"));
+
+
+</script>
+</html>
