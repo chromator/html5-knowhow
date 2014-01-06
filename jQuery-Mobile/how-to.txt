@@ -1,0 +1,2 @@
+Run these emulators on Opera emulator
+http://www.opera.com/developer/mobile-emulator
