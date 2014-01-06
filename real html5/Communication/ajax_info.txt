@@ -1,0 +1,3 @@
+Ajax is fun.
+HTML 5 Support geolocation.
+Microsoft is coming up with Metro UI.

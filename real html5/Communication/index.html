@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+
+		
+
+		<title>Communication API</title>
+		<meta name="author" content="Comm Api" />
+		<style type="text/css">
+			* 							{ margin:0px; padding:0px }
+			html, body					{ font-family:Arial; font-size:12px; background-color:#000; }
+	
+			#toggle-windows				{ margin:10px; }
+			#message-panel				{ display:none; margin-top:30px; opacity:0;  }
+			
+			textarea					{ height:100px; width: 300px;}	
+		</style>
+	</head>
+	<body>
+		
+		<input type="button" id="toggle-windows" value="Open Windows" />
+		
+		<section id="message-panel">
+			<textarea id="message"></textarea><br/>
+			<input type="button" value="Send" id="send-message" />
+		</section>
+		
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+		<script type="text/javascript">
+		
+			$(document).ready(function(){
+				
+				//Check for browser support
+				if(typeof window.postMessage === "undefined"){
+					alert('Your browser doesn\'t support postMessage');
+				} else {
+					
+					//Will hold the instances of the opened windows
+					var windows = [];
+					
+					//How many windows to open
+					var TOTAL_WINDOWS = 1;
+					
+					//Binding events to elements
+					$('#toggle-windows').bind('click', onToggleWindows);
+					$('#send-message').bind('click', onSendMessage);
+					
+					/**
+					 * Spawns two windows
+					 */
+					function onToggleWindows(e){
+						//If we haven't opened any windows then
+						//open
+						if(windows.length == 0){
+							
+							$(this).val('Close Windows');	
+							
+							for(var d = 0; d < TOTAL_WINDOWS; d++){
+								
+								//Open window and save the instance in to the array
+								windows.push(window.open('target.html', 'window'+d, 'width=300, height=300'));
+								
+								//Show panel
+								$('#message-panel').css('display','block').stop().animate({opacity:1}, 200);
+								
+							}
+							
+						} else {
+							
+							//Close windows
+							$(this).val('Open Windows');
+							for(var d = 0; d < TOTAL_WINDOWS; d++){
+								windows[d].close();	
+							}
+							
+							//Hide Panel
+							$('#message-panel').stop().animate({opacity:1}, 200, 'linear', function(){$(this).css('display','block');} );
+							
+							//Reset the array
+							windows = [];
+							
+						}
+					}
+					
+					/**
+					 * Sends the message to the open windows
+					 */
+					function onSendMessage(e) {
+						//Loop through all the open windows and send the message
+						for(var d = 0; d < windows.length; d++){
+							windows[d].postMessage($('#message').val(), 'http://localhost');
+							windows[d].focus();		
+						}
+						//Reset the textarea
+						$('#message').val('');
+					}
+				
+				}
+			});
+			
+		</script>
+	</body>
+</html>

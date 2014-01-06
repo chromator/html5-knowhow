@@ -1,0 +1,20 @@
+<iframe src="http://localhost:8080/examples/Communication/receive.html" id="iframe" style="height:60px"></iframe>
+
+<form name="form">
+  <input type="text" name="msg" value="Your message"/>
+  <input type="submit"/>
+</form>
+
+<script>
+
+  var win = document.getElementById("iframe").contentWindow
+
+  document.forms.form.onsubmit = function() {
+    win.postMessage(
+      this.elements.msg.value,
+      "http://localhost:8080" 
+    )
+    return false
+  }
+
+</script>
