@@ -1,0 +1,22 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <meta charset="utf-8"> 
+        <title>Hello World</title> 
+ 
+        <script src="sencha-touch-all.js" type="text/javascript"></script> 
+        <link href="sencha-touch.css" rel="stylesheet" type="text/css" /> 
+        <script type="text/javascript"> 
+            Ext.application({ // calls Ext.app.Application
+                launch: function () {
+				    console.log("Application started");
+                    Ext.create('Ext.Panel', {
+                        fullscreen: true,
+                        html: 'Hello World!'
+                    });
+                }
+            });
+        </script> 
+    </head> 
+    <body></body> 
+</html>

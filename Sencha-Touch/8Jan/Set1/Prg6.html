@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="sencha-touch.css" type="text/css">
+    <script type="text/javascript" src="sencha-touch-all.js"></script>
+
+    <script type="text/javascript">
+
+        Ext.application({
+            launch : function() {
+                var myContainer = new Ext.Container({
+                    fullscreen : true,
+                    layout     : 'fit',
+                    items      : [
+                        {
+                            docked : 'top',
+                            xtype  : 'toolbar',
+                            title  : 'Fit Layout'
+                        },
+                        {
+                            xtype : 'container',							
+                            style : 'background-color: pink; padding: 20px;',
+                            html  : 'I Fit in my parent'
+                        },
+						{
+                            xtype : 'container',							
+                            style : 'background-color: green; padding: 20px;',
+                            html  : 'I Fit in my parent2'
+                        },
+						{
+                            xtype : 'container',							
+                            style : 'background-color: red; padding: 20px;',
+                            html  : 'I Fit in my parent3'
+                        }
+                    ]
+                });
+            }
+        });
+
+    </script>
+
+</head>
+<body></body>
+</html>
