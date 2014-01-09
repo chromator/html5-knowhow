@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="sencha-touch.css" type="text/css">
+    <script type="text/javascript" src="sencha-touch-all.js"></script>
+
+    <script type="text/javascript">
+
+        Ext.application({
+            launch : function() {
+                Ext.create('Ext.TabPanel', {                                       //#1
+                    fullscreen : true,
+                    ui         : 'light',
+                    tabBar     : {
+                        docked : 'bottom',
+                        layout : {
+                            pack : 'center'
+                        }
+                    },
+                    items      : [
+                        {
+							xtype 	: 'container',
+							layout     : {
+								type  : 'vbox',
+								pack  : 'left',
+								align : 'center'
+							},
+							items : [
+								{
+									xtype       : 'textfield',
+									label       : 'Name',
+									itemId      : 'nameField',
+									placeHolder : 'Enter Name Here'
+								},
+								{
+									xtype       : 'textfield',
+									label       : 'Organization',
+									itemId      : 'orgField',
+									placeHolder : 'Enter Your Organization Here'
+								},
+								{
+									xtype       : 'textfield',
+									label       : 'Department',
+									itemId      : 'orgField',
+									placeHolder : 'Enter department Here'
+								},
+								{
+									xtype       : 'textfield',
+									label       : 'Location',
+									itemId      : 'deptField',
+									placeHolder : 'Enter Your Location Here'
+								},
+								{
+									xtype       : 'textfield',
+									label       : 'Project',
+									itemId      : 'orgField',
+									placeHolder : 'Enter Your Project Here'
+								},
+								{
+									xtype       : 'textfield',
+									label       : 'Salary',
+									itemId      : 'orgField',
+									placeHolder : 'Enter Your Salary Here'
+								},
+							],
+                            title   : 'Employee Data',
+                            iconCls : 'star'                                       //#2
+                        },
+                        {
+                            style   : 'background-color: #CFC;',
+                            html    : 'Panel 2',
+                            title   : 'Processed data',
+                            iconCls : 'user'
+                        }
+                    ]
+
+                });
+            }
+        });
+    </script>
+</head>
+<body></body>
+</html>

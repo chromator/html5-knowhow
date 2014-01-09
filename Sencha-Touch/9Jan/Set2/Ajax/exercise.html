@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="sencha-touch.css" type="text/css">
+    <script type="text/javascript" src="sencha-touch-all.js"></script>
+
+    <script type="text/javascript">
+
+        Ext.application({
+            launch : function() {
+                var panel = Ext.create('Ext.Panel', {                                       //#1
+                    fullscreen : true,
+                    ui         : 'light',
+					
+                    items      : [
+						{
+							xtype 	: 'container',
+							id		: 'myform',
+							layout     : {
+								type  : 'vbox',
+								pack  : 'center',
+								align : 'center'
+							},
+							items : [
+								{
+									xtype       : 'textfield',
+									label       : 'Name',
+									itemId      : 'nameField',
+									placeHolder : 'Enter Name Here',
+									id			: 'name'
+								},
+								{
+									xtype       : 'textfield',
+									label       : 'Organization',
+									itemId      : 'orgField',
+									placeHolder : 'Enter Your Organization Here',
+									id			: 'organization'
+								}
+							],
+                            title   : 'Employee Data',
+                            iconCls : 'star'                                       //#2
+                        },
+                        {
+                            xtype	: 'button',
+                            text	: 'Submit',
+							handler : function() {
+								var result = Ext.getCmp('name').getValue();
+							
+								var formData = new FormData();
+								formData.append("firstName", "Anushka");
+								formData.append("lastName", "Sharma");
+
+								// Request will be sent as part of the payload instead of standard post data
+								var request = {
+									url: 'http://sencha-xhr2-demos.herokuapp.com/post-json.php',
+									method: 'POST',
+									xhr2: true,
+									data: formData,
+									success: function(response) {
+										var out = Ext.getCmp("output");
+										response = Ext.JSON.decode(response.responseText, true);
+										out.setHtml(response.message);
+									},
+									failure: function(response) {
+										var out = Ext.getCmp("output");
+										out.setHtml(response.message);
+									}
+								};
+								
+								Ext.Ajax.request(request);
+							}
+                        },
+						{
+							xtype: "panel",
+							id: "output",
+						}
+                    ]
+
+                });
+            }
+        });
+    </script>
+</head>
+<body></body>
+</html>

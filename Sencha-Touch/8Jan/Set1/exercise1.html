@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+    <link rel='stylesheet' href='sencha-touch.css' type='text/css'>
+    <script type='text/javascript' src='sencha-touch-all.js'></script>
+
+    <script type='text/javascript'>
+
+        Ext.application({
+            launch : function() {
+				var showPicker = function() {
+                    var myPicker = Ext.create('Ext.Picker', {
+                        useTitles : true, // generates a title for each slot, based on the slot configuration
+                        hidden    : true,
+                        slots     : [
+                            {
+                                name  : 'Currency',
+                                title : 'Currencies',
+                                data  : [
+                                    {text : 'USD', value : 1},
+                                    {text : 'INR', value : 62},
+                                    {text : 'GRB', value : 0.07}
+                                ]
+                            }
+                        ]
+                    });
+                    Ext.Viewport.add(myPicker).show();
+                };
+				
+                var myContainer = Ext.create('Ext.Container', {
+                    fullscreen : true,
+                    layout     : {
+                        type  : 'hbox',
+                        pack  : 'center',
+                        align : 'center'
+                    },
+                    defaults   : {
+                        style : 'border: 1px solid black;'
+                    },
+                    items      : [
+                        {
+							flex	: 2,
+							xtype : 'textfield',       
+							id		: 'leftValue'
+                            width : 100
+                        },
+                         {
+							xtype	: 'button',
+							flex	: 2,
+							id		: 'leftCurrency',
+                            text    : 'Currency',
+                            handler : showPicker
+                        },
+                        {
+							flex	: 2,
+							xtype : 'textfield',    
+							id		: 'rightValue'							
+                            width : 100
+                        },
+                         {
+							xtype	: 'button',
+							flex	: 2,
+							id		: 'rightCurrency',
+                            text    : 'Currency',
+                            handler : showPicker
+                        },
+						 {
+							xtype	: 'button',
+							flex	: 2,
+                            text    : 'Convert',
+                            handler : function() {
+								var lVal = myContainer.getComponent('leftValue').getValue();
+								var lCurrency = myContainer.getComponent('leftCurrency').getValue();
+								var rCurrency = myContainer.getComponent('rightCurrency').getValue();
+								
+								
+								var rVal = ;
+							}
+                        },
+                    ]
+                });
+            }
+        });
+    </script>
+</head>
+<body></body>
+</html>

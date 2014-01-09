@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="sencha-touch.css" type="text/css">
+    <script type="text/javascript" src="sencha-touch-all.js"></script>
+
+    <script type="text/javascript">
+
+        Ext.application({
+            launch : function() {
+				
+                var handleAddButton = function () {                                      // # 2
+                    var dockedItems = topContainer.getDockedItems();
+
+                    topContainer.add({
+                        xtype  : 'container',                                            //  # 3
+                        style  : 'border-bottom: 1px solid; background-color: #F99;',
+                        height : 30,
+                        html   : 'Top dock: ' + dockedItems.length
+                    });
+                };
+
+                var handleRemoveButton = function () {                                   // # 2
+                    var dockedItems = topContainer.getDockedItems(),
+                        totalItems  = dockedItems.length,
+                        dockedItem;
+
+                    if (totalItems > 0) {
+                        dockedItem = topContainer.getDockedComponent(totalItems - 1);
+                        topContainer.remove(dockedItem, true);                              // # 4
+                    }
+                };
+
+				var handleAddButtonBottom = function () {                                      // # 2
+                    var dockedItems = myPanel.getDockedItems();
+
+                    myPanel.add({
+                        xtype  : 'container',                                            //  # 3
+                        docked : 'bottom',
+                        style  : 'border-bottom: 1px solid; background-color: #F99;',
+                        height : 30,
+                        html   : 'Top dock: ' + dockedItems.length
+                    });
+                };
+
+                var handleRemoveButtonBottom = function () {                                   // # 2
+                    var dockedItems = myPanel.getDockedItems(),
+                        totalItems  = dockedItems.length,
+                        dockedItem;
+
+                    if (totalItems > 0) {
+                        dockedItem = myPanel.getDockedComponent(totalItems - 1);
+                        myPanel.remove(dockedItem, true);                              // # 4
+                    }
+                };
+				
+                var myPanel = Ext.create('Ext.Panel', {                              // # 1
+                    fullscreen : true,
+                    bodyStyle  : 'padding: 10px;',
+                    layout     : {
+                        type : 'vbox',
+                        pack : 'center'
+                    },
+                    items      : [
+						{
+							xtype	: 'container',
+							docked	: 'top',
+							id		: 'topContainer',
+						},
+                        {
+                            xtype   : 'button',
+                            text    : 'Add top',
+                            handler : handleAddButton
+                        },
+                        {
+                            xtype   : 'button',
+                            text    : 'Remove top',
+                            handler : handleRemoveButton
+                        },
+						{
+                            xtype   : 'button',
+                            text    : 'Add bottom',
+                            handler : handleAddButtonBottom
+                        },
+                        {
+                            xtype   : 'button',
+                            text    : 'Remove Bottom',
+                            handler : handleRemoveButtonBottom
+                        },
+						{
+							xtype	: 'container',
+							docket	: 'bottom',
+							id		: 'bottomContainer'
+						}
+                    ]
+                });
+				var topContainer = myPanel.getComponent('topContainer');
+				var bottomContainer = myPanel.getComponent('bottomContainer');
+            }
+        });
+
+    </script>
+
+</head>
+<body></body>
+</html>

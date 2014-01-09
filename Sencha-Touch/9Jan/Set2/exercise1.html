@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="sencha-touch.css" type="text/css">
+    <script type="text/javascript" src="sencha-touch-all.js"></script>
+
+<script type="text/javascript">
+
+Ext.application({
+    launch : function() {
+    var loginContainer = Ext.create('Ext.Container', {
+ // to create object
+    itemId     : 'loginContainer',
+    fullscreen : true,
+ layout     : {
+                        type  : 'vbox',
+                        align : 'center'
+                    },
+    items      : [
+        {
+            xtype       : 'textfield',
+            label       : 'First Name',
+   id      : 'ename',
+            placeHolder : 'Enter Name Here',
+                            width : 400
+        },
+        {
+            xtype       : 'textfield',
+            label       : 'Last Name',
+            id      : 'Empid',
+            placeHolder : 'Enter Your Lastname Here',
+                            width : 400
+        },
+  {
+                        layout     : {
+                        type  : 'hbox',
+                        align : 'center'
+                    },
+                        items  : [
+                            {
+                                xtype       : 'button',
+            text       : 'Invite',
+   width:200,
+       
+                                handler : function() {
+                                    var ename = loginContainer.down('textfield[id=ename]').getValue();
+var empid = loginContainer.down('textfield[id=Empid]').getValue();      
+                    Ext.Msg.alert('Invitation','Dear '+ename+' '+empid+', you are cordially invited for our house warming ceremony taking place on 20th Jan 2014.');
+     
+                                }
+                            }
+                        ]
+                    }
+    ]
+});
+    this.Viewport = loginContainer; //optional
+    }
+});
+
+</script>
+
+</head>
+<body></body>
+</html>
