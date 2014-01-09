@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>XHR2 - Params</title>
+
+	<script src="sencha-touch-all.js"></script>
+	<link rel="stylesheet" href="sencha-touch.css">
+
+	<script type="text/javascript">
+
+		Ext.setup({
+			// Request will be sent as standard post data
+			onReady: function() {
+				var request = {
+					url: 'http://sencha-xhr2-demos.herokuapp.com/post-json.php',
+					method: 'POST',
+					xhr2: true,
+					params: {
+						firstName: "Gabbar",
+						lastName: "Singh"
+					},
+					success: function(response) {
+						var out = Ext.getCmp("output");
+						response = Ext.JSON.decode(response.responseText, true);
+						out.setHtml(response.message);
+					},
+					failure: function(response) {
+						var out = Ext.getCmp("output");
+						out.setHtml(response.message);
+					}
+				};
+
+				Ext.Viewport.add({
+					xtype:"panel",
+					layout:"vbox",
+					fullscreen:true,
+					items: [
+						{
+							xtype:"button",
+							text: "Ajax",
+							ui: 'confirm',
+							handler: function(){
+								Ext.Ajax.request(request);
+							}
+						},
+						{
+							xtype: "panel",
+							id: "output",
+							scrollable: true,
+							flex:1
+						}
+					]
+				});
+			}
+		});
+	</script>
+</head>
+<body>
+</body>
+</html>

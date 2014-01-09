@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title></title>
+	<link rel="stylesheet" href="sencha-touch.css" type="text/css">
+	<script type="text/javascript" src="sencha-touch-all.js"></script>
+
+	<script type="text/javascript">
+        
+		Ext.application({
+		    glossOnIcon         : false,
+		    icon                : 'icon.png',
+			
+		    launch : function() {
+
+                var geo = new Ext.util.Geolocation({
+                    allowHighAccuracy : true,
+                    listeners         : {
+                        locationupdate : function(geo) {
+                            console.log('New latitude: ' + geo.getLatitude());
+                        },
+                        locationerror  : function(geo, timeout) {
+                            if (timeout){
+                                console.log('Timeout occurred.');
+                            } else {
+                                console.log('Error occurred.');
+                            }
+                        }
+                    }
+                });
+                geo.updateLocation();
+            }
+		});
+
+	</script>
+</head>
+<body></body>
+</html>
