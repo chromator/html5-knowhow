@@ -30,3 +30,13 @@ Prg4 : showing dialog after link click
 Prg5 : dialog with rounded corners
 Prg6 : showing dialog for some duration, time
 Prg7 : showing popup
+Prg8, Prg9 : icon for tab
+
+7 Jan Set3
+Prg1, Prg3, Prg3a, Prg3b : Slider
+Prg2 : Enable/disable fields
+Prg4, Prg4a : Drop-down, combo-box
+Prg5, Prg6 : List
+Prg7 : List with search
+Prg8 : iOS like top bar buttons
+Prg9 : Top bar, bottom bar buttons
