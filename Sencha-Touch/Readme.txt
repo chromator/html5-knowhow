@@ -24,3 +24,7 @@ Prg5 : Top toolbar with buttons horizontally attached
 Prg6 : Picker controls like drop-down, combo box, date picker
 Prg7 : Different types of alerts, dialog box
 Prg8, Prg9 : Location based APIs using Google map
+
+Look for different control at http://docs.sencha.com/touch/2.0.2/#!/api/Ext.Panel
+Check property under - configs
+Check methods under - methods

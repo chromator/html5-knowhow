@@ -1,3 +1,0 @@
-Run these emulators on Opera emulator
-http://www.opera.com/developer/mobile-emulator
-Keep sample programs in webapps/examples folder of tomcat and run using localhost url
