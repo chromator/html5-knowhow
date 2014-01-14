@@ -21,7 +21,7 @@ Prg1, Prg2 : aligning control relative to window to top, botton, left, right. ex
 Prg3 : Adding items to Panel. docked items
 Prg4 : Top aligned toolbar
 Prg5 : Top toolbar with buttons horizontally attached
-Prg6 : Picker controls like drop-down, combo box, date picker
+Prg6 : Picker controls like drop-down, combo box, date picker. Use of flex similar to layout weight in Android
 Prg7 : Different types of alerts, dialog box
 Prg8, Prg9 : Location based APIs using Google map
 
