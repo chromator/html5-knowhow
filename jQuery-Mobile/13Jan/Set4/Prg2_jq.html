@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Page Title</title>
+<link rel="stylesheet" type="text/css" href="jqModal.css" />
+<script src="jquery-1.9.1.js"></script>
+<script src="jqModal.js"></script>
+</head>
+
+
+<body>
+<input type="button" onClick='$("#dialog").jqmShow()' value="show">
+<div class="jqmWindow" id="dialog">
+<input type="button" onClick='$("#dialog").jqmShow()' value="show">
+<a style="float:right;" class="jqmClose">X</a>
+  HELLO AGAIN
+</div>
+</body>
+
+<script>
+$(document).ready(function() {
+  $("#dialog").jqm();
+});
+</script>
+
+</html>

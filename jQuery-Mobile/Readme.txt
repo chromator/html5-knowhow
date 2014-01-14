@@ -40,3 +40,7 @@ Prg5, Prg6 : List
 Prg7 : List with search
 Prg8 : iOS like top bar buttons
 Prg9 : Top bar, bottom bar buttons
+
+13 Jan Set4
+Prg1_car : carousal or sliding film script as seen in in.com or music websites, plugin
+Prg2_jq, Prg3_jq : jq model, creating dialog boxes plugin

@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <style type="text/css" media="screen">
+		@import "jquery.mobile-1.3.1.css";
+		</style>        
+        <link rel="stylesheet" href="carousel.css" type="text/css"/>
+		<script src="jquery-1.9.1.js"></script>				
+        <script src="jquery.mobile-1.3.1.js" type="application/x-javascript"></script>			
+        <script src="carousel.js"></script>		
+        <title>jQuery Mobile Carousel</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <style>
+          a {
+            color : #333;
+          }
+        </style>										
+    </head>
+    <body>
+		<div data-role="page" id="main_page" data-theme="b">
+			<div data-role="content" >	
+				<div id="content" style="height:100%;width:300px;">					
+					<div style="height:100%;width:300px;">
+					<!-- start carousel widget html --> 
+						<div style="height:460px;width:300px;">
+							<div  id="carousel" class="carousel">							
+								<div id="carousel_scrollpane" class="carousel-content">
+									<div id="carousel_content" class="carousel-content-scroller"> </div>
+								</div>
+								<div id="carousel_nav" class="carousel-nav">
+									<div id="carousel_mid" class="carousel-mid"></div>
+								</div>
+							</div>
+						</div><!-- end carousel widget html -->
+					<!-- template used for the carousel items -->
+					<div id="carousel_template" style="display:none">
+						<div class="carousel-item">
+							<div style="height:2em;font-size:1.5em;padding-bottom:15px;">@{title}</div>
+							<div id="carousel_item_@{id}" >
+								<div style="float:left;width:100%"><img src="@{image}" /></div>				      								
+							</div>
+						</div>
+				    </div>
+					<script>
+			var carousel = new $.widgets.Carousel( {
+			 	uuid : "carousel",
+				args : { "scrollInterval" : 2000,"itemWidth":390
+				},
+				  	value : [
+							{ "title" : "Tron.Legacy",
+					  	      "image" : "1.jpg"
+					  	    },
+					  	    { "title" : "Yogi Bear",
+					  	      "image" : "2.jpg"
+					  	    },
+					  	    { "title" : "The Chronicles of Narnia: The Voyage of the Dawn Treader",
+					  	      "image" : "3.jpg"
+					  	    },
+					  	    { "title" : "The Fighter",
+					  	      "image" : "4.jpg"
+					  	    },
+					  	    { "title" : "Tangled",
+					  	      "image" : "5.jpg"
+					  	    }
+					]
+				});					  
+		</script>		
+					<!-- end item template -->								
+				</div> <!-- content -->
+			</div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jqModal demo</title>
+<link href="jqModal.css" rel="stylesheet" type="text/css">
+<script src="jquery-1.9.1.js"></script>
+<script src="jqModal.js"></script>
+</head>
+
+<body>
+<a href="#" class="jqModal">view</a>
+<div class="jqmWindow" id="dialog"> <a href="#" class="jqmClose">Close</a>
+<hr>
+<em>READ ME</em> -->
+This is a "vanilla plain" jqModal window. Behavior and appeareance extend far beyond this.
+The demonstrations on this page will show off a few possibilites. I recommend walking
+through each one to get an understanding of jqModal <em>before</em> using it. <br />
+<br />
+You can view the sourcecode of examples by clicking the Javascript, CSS, and HTML tabs.
+Be sure to checkout the <a href="README">documentation</a> too! <br />
+<br />
+<em>NOTE</em>; You can close windows by clicking the tinted background known as the "overlay".
+Clicking the overlay will have no effect if the "modal" parameter is passed, or if the
+overlay is disabled. 
+<p><a href="http://www.accenture.com/"><strong>Free jQuery Plugins and Tutorials</strong></a> - Providing tons of <em>Jquery Plugins</em>,<em> Javascript Libraries, Html5, CSS3 Scripts</em> for web developers to free download</p></div>
+<script>
+$().ready(function() {
+  $('#dialog').jqm();
+});
+</script>
+</body>
+</html>

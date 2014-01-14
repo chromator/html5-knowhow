@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title></title>
+	<link rel="stylesheet" href="sencha-touch.css" type="text/css">
+	<script type="text/javascript" src="sencha-touch-all.js"></script>
+
+	<script type="text/javascript">
+
+	
+Ext.application({
+    launch: function() {
+	
+    Ext.define('MyApp.store.UserStore', {
+    extend: 'Ext.data.Store',
+    config: {
+        data: [
+            {
+                firstname: 'Kevin',
+                lastname: 'Mitnik'
+            },
+            {
+                firstname: 'Gavin',
+                lastname: 'Andreseen'
+            },
+            {
+                firstname: 'Pawan',
+                lastname: 'Diwanji'
+            },
+            {
+                firstname: 'Atul',
+                lastname: 'Chitnis'
+            },
+            {
+                firstname: 'Vijayian',
+                lastname: 'Nair'
+            }
+        ],
+        storeId: 'MyStore',
+        fields: [
+            {
+                name: 'firstname'
+            },
+            {
+                name: 'lastname'
+            }
+        ]
+    }
+});
+  
+  var usobj = Ext.create('MyApp.store.UserStore');
+
+ Ext.define('MyApp.view.UserContainer', {
+    extend: 'Ext.Container',
+    config: {
+	fullscreen: true,
+        items: [		
+            {
+                xtype: 'titlebar',
+                docked: 'top',
+                title: 'Users'
+            },
+            {
+                xtype: 'dataview',
+                height: 272,
+                itemTpl: [
+                    '<div>{firstname} {lastname}</div>'
+                ],
+                store: usobj
+            }
+        ]
+    }
+});
+
+  var obj = Ext.create('MyApp.view.UserContainer');
+    obj.viewport = obj;
+ }
+});
+
+ 	</script>
+
+	</head>
+<body></body>
+</html>

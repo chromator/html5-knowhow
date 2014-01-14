@@ -28,3 +28,6 @@ Prg8, Prg9 : Location based APIs using Google map
 Look for different control at http://docs.sencha.com/touch/2.0.2/#!/api/Ext.Panel
 Check property under - configs
 Check methods under - methods
+
+14 Jan
+Prg10, Prg11 - data store
