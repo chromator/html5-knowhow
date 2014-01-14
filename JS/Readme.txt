@@ -7,3 +7,4 @@ eg5 : function pointer, onclick event listener as function pointer
 eg6 : Inline java script functions
 eg9, eg8 : Use of arrays
 eg10 : Including external java script
+number.js : perfect example of finding prime no. and even odd numbers.
