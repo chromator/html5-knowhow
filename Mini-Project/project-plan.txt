@@ -1,0 +1,8 @@
+- Completion of following modules
+	Login
+	List of quiz
+	actual quiz
+	result
+	database
+- Integration of all modules
+- Testing with integration
