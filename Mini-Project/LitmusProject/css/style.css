@@ -1,0 +1,97 @@
+.container {
+width: 100%;
+height: 100%;
+position: relative;
+text-align: center;
+}
+body
+{
+	background-image:url('./images/bg.jpg');
+	background-size:100% 100%;
+	background-repeat:repeat;
+}
+#apptitle{
+	text-align: center;
+	display: block;
+
+	color: rgb(6, 106, 117);
+}
+#apptitle h1{
+	font-size: 35px;
+	color: rgb(6, 106, 117);
+	padding: 2px 0 10px 0;
+	font-family: 'FranchiseRegular','Arial Narrow',Arial,sans-serif;
+	font-weight: bold;
+	text-align: center;
+	padding-bottom: 10px;
+}
+#register,
+#login{
+	position: absolute;
+	top: 0px;
+	width: 88%;	
+	padding: 18px 6% 18px 6%;
+	
+	margin: 0 0 35px 0;
+	background: rgb(247, 247, 247);
+	border: 1px solid rgba(147, 184, 189,0.8);
+	-webkit-box-shadow: 0pt 2px 5px rgba(105, 108, 109,  0.7),	0px 0px 8px 5px rgba(208, 223, 226, 0.4) inset;
+	   -moz-box-shadow: 0pt 2px 5px rgba(105, 108, 109,  0.7),	0px 0px 8px 5px rgba(208, 223, 226, 0.4) inset;
+	        box-shadow: 0pt 2px 5px rgba(105, 108, 109,  0.7),	0px 0px 8px 5px rgba(208, 223, 226, 0.4) inset;
+	-webkit-box-shadow: 5px;
+	-moz-border-radius: 5px;
+		 border-radius: 5px;
+}
+#wrapper {
+	width: 60%;
+	right: 0px;
+	min-height: 500px;
+	margin: 0px auto;
+	width: 300px;
+	position: relative;
+	
+}
+#signupwrapper {
+	width: 60%;
+	right: 0px;
+	min-height: 500px;
+	margin: 0px auto;
+	width: 300px;
+	position: relative;
+	
+}
+h1{
+	font-size: 15px;
+	color: rgb(6, 106, 117);
+	padding: 2px 0 5px 0;
+	font-family: 'FranchiseRegular','Arial Narrow',Arial,sans-serif;
+	font-weight: bold;
+	text-align: center;
+	padding-bottom: 5px;
+}
+#formItem label {
+    display: block;
+    text-align: left;
+    line-height: 150%;
+    font-size: .95em;
+	font-family: 'FontomasCustomRegular';
+	color: rgb(18, 83, 93);
+	font-weight:bold;
+}
+div.message{
+    background: transparent url(msg_arrow.gif) no-repeat scroll left center;
+    padding-left: 7px;
+}
+
+div.error{
+    background-color:#F3E6E6;
+    border-color: #924949;
+    border-style: solid solid solid none;
+    border-width: 2px;
+    padding: 5px;
+}
+.error{
+    border-color: #F78181;
+    color:red;
+    display:block;
+}

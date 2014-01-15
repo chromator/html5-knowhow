@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <script type="text/javascript" src="./js/jquery-1.10.1.js"></script>  
+	 <script src="./js/jquery.js"></script>
+	<script type="text/javascript" src="./js/jquery.validate.js"></script>
+	<script type="text/javascript" src="./js/dbhandler.js"></script>
+	<script type="text/javascript">
+        $(document).ready(function () {
+	//	alert(sessionStorage.getItem('counter'));
+		
+		
+			$("#btnSubmit").click(function (event) {
+				event.preventDefault();
+				var username = $("#txtUsername").val();
+				var password = $("#txtPassword").val();
+				var emailId = $("#txtUserId").val();
+				//alert(username+" "+password+" "+emailId);
+				var success=saveUser(username, password, emailId,function()
+				{
+					location.href = "./login.html";  
+				});
+				
+			});
+			  // initialize tooltipster on text input elements
+				function errorPlacement1(error, element)
+					{
+						var errorDD = $('<div class="error"></div>').insertAfter(element.parent('dd').next('dd'));
+						error.appendTo(errorDD);
+					}
+			
+			$("#signupForm").validate({
+    
+				// Specify the validation rules
+				
+			 // errorElement: "div",
+			// errorPlacement: function(error, element) {
+			   //var obj = element.next().next();
+			//	error.appendTo(element.next('span') );
+				// error.appendTo(element.parent("div").find("div"));
+				// element.parent("div").find("div").append(error);
+					//if(element.attr("name") == "RID[]"){
+					//	error.appendTo($('#errorbox'));
+					//}else{
+					//error.appendTo( element.parent().next() );
+					//}
+				
+			//},
+				//errorContainer: "#errorContainer", 
+               // errorLabelContainer: "#errorContainer", 
+               // errorElement: "li",
+				// Specify the validation error messages
+				messages: {
+					txtUsername: "Name can not be empty",
+					txtUserId: "Please enter a valid email address",
+					txtPassword: {
+						required: "Please provide a password",
+						minlength: "Your password must be at least 5 characters long"
+					},
+					
+					txtconfirmPassword: {
+						required: "Please provide a password",
+						minlength: "Your password must be at least 5 characters long",
+						equalTo: "Please enter the same password as above"
+					}
+					
+				},
+			
+				submitHandler: function(form) {
+					form.submit();
+				}
+         });
+        });
+		
+		
+		
+    </script>  
+	<script type="text/javascript" src="./js/jquery.mobile-1.3.1.js"></script>   
+	<link rel="stylesheet"  href="./css/style.css" type="text/css" />
+	<link rel="stylesheet" href="./css/jquery.mobile-1.3.1.css" type="text/css" />
+	<link rel="stylesheet" href="./css/jquery.mobile.theme-1.3.1.css" type="text/css" />
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="header">
+        </div>
+        <div data-role="content" >	
+		<div id="apptitle">
+			 <p align="center"><b>  Quizz App </b></p>
+		</div>
+                <div id="wrapper">
+				   <div id="login" >
+						<h1>Sign Up</h1> 
+						 <form id="signupForm">
+						 		<p> 
+									<label for="txtUsername" data-icon="u" >Your Name :</label>
+									<input size="30px" type="text" name="txtUsername"  data-placement="bottom" id="txtUsername" required="required" placeholder="myusername"/>
+									
+								</p>
+								<p> 
+								<label for="txtUserId" data-icon="u" >Your email :</label>
+								<input size="30px" type="email" name="txtUserId" id="txtUserId" required="required" placeholder="myusername or mymail@mail.com"/>
+								  </p>
+								  <p> 
+								<label for="txtPassword" data-icon="p">Your password :</label>
+								<input type="password" size="30px" name="txtPassword" id="txtPassword" required="required" minlength="5"  placeholder="eg. X8df!90EO"/>
+								  </p>  
+								  <p> 
+								<label for="txtconfirmPassword" data-icon="p">Confirm password :</label>
+								<input type="password" size="30px" name="txtconfirmPassword" id="txtconfirmPassword" required="required" minlength="5"  equalTo="#txtPassword" placeholder="eg. X8df!90EO"/>
+								  </p>  
+								 <P class="alignleft">
+									<input type="submit" id="btnSubmit" value="Submit" />
+								 </p>
+								<div id="errorContainer">
+								</div>
+						 </form>
+					</div>
+				 </div>
+        </div>
+   </div>
+</body>
+</html>

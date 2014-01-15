@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="./js/jquery-1.10.1.js"></script>  
+	 <script src="./js/jquery.js"></script>
+	 <script type="text/javascript" src="./js/jquery.validate.js"></script>
+	 <meta charset="ISO-8859-1">
+	<script type="text/javascript" src="./js/dbhandler.js">
+	</script>
+<title>Quiz Question</title>
+
+<!--<script type="text/javascript" src="ScoreCalculation.js">
+</script>-->
+
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		var localQuestion;
+		var questionIndex=-1;
+	
+		readQuestions('easy', 1, function(questions) {
+			console.log('Questions: '+questions);
+			var i;
+			var question;
+			localQuestion =  questions;
+			$( "#next1" ).click();
+		});
+		$("#next1").click(function()
+		{
+				
+			
+			//alert("next called");
+			if(questionIndex<localQuestion.length)
+			{
+				questionIndex++;
+				if(questionIndex >0)
+				{
+					if(!$('#back').is(':visible'))
+					{  
+						//alert('car 2 is hidden');   
+						$( "#back" ).show();					
+					}
+				}
+			
+				question = localQuestion[questionIndex];
+				var desc = question['desc'];
+				var options = question['options'];
+				//alert(desc);
+				$("#question").html(desc );
+				for (j=0;j<options.length;j++)
+				{
+					var optionItem =  options[j];
+				 	var optionDesc = optionItem['desc'];
+					//alert(optionDesc);
+					var index=j+1;
+					$("#option"+index).html(optionDesc );
+				}
+				}
+				
+				if(questionIndex == localQuestion.length-1)
+				{
+				  $( "#next1" ).hide();
+				}
+		}
+		
+		);
+		$("#back").click(function()
+		{
+			//alert("next called");
+			if(questionIndex<localQuestion.length)
+			{
+				questionIndex--;
+				if(questionIndex >0)
+				{
+					if(!$('#back').is(':visible'))
+					{  
+						//alert('car 2 is hidden');   
+						$( "#back" ).show();					
+					}
+				}
+				else
+				{
+				  $( "#back" ).hide();					
+				}
+			
+				question = localQuestion[questionIndex];
+				var desc = question['desc'];
+				var options = question['options'];
+				//alert(desc);
+				$("#question").html(desc );
+				for (j=0;j<options.length;j++)
+				{
+					var optionItem =  options[j];
+				 	var optionDesc = optionItem['desc'];
+					//alert(optionDesc);
+					var index=j+1;
+					$("#option"+index).html(optionDesc );
+				}
+				}
+				
+				if(questionIndex == localQuestion.length-1)
+				{
+				  $( "#next1" ).hide();
+				}
+				if(!$('#next1').is(':visible'))
+				{  
+					//alert('car 2 is hidden');   
+					$( "#next1" ).show();					
+				}
+		}
+		
+		);
+	}); 
+
+</script>
+
+<style type="text/css">
+#question{
+	height: 150px;
+	width:50%;
+	border: 1px solid black;
+	margin: 0px 25% 25px 25%;
+}
+table
+{
+	height: 75px;
+	width:50%;
+	border: 1px solid black;
+	margin: 0px 25% 25px 25%;	
+}
+#option1, #option2, #option3, #option4
+{
+	width: 90%;
+}
+tr
+{
+	height: 20px;
+}
+div, table {
+	border-radius: 10px;
+}
+#chnge1
+{
+	font: italic 200% Georgia, "Times New Roman", Times, serif;
+	
+	color:	#996633;
+	text-align: center;
+}
+</style>
+</head>
+<body>
+<div id="mainpage">
+
+	</div>
+	<!--<div id="chnge">-->
+	<h1 id="chnge1"> Online Quiz</h1>
+	<br><br><br>
+	<br>
+	<div id="question"></div>
+	<table>
+		<tr>
+			<td>
+				<input type="radio" name="option" value="a" id="choice1">A.
+			</td>
+			<td id="option1">
+			</td>
+		</tr>
+		<tr></tr>
+		<tr>
+			<td>
+				<input type="radio" name="option" value="b" id="choice2">B.
+			</td>
+			<td id="option2">
+			</td>
+		</tr>
+		<tr></tr>
+		<tr>
+			<td>
+				<input type="radio" name="option" value="c" id="choice3">C.
+			</td>
+			<td id="option3">
+			</td>
+		</tr>
+		<tr></tr>
+		<tr>
+			<td>
+				<input type="radio" name="option" value="d" id="choice4">D.
+			</td>
+			<td id="option4">
+			</td>
+		</tr>
+	</table>
+	<div align="center">
+		<input type="button" value="Back" id="back" onclick="" style="display:none">
+		<input type="button" value="Next" id="next1" onclick="" >
+		<input type="button" value="Submit" onclick="">
+	</div>
+	<div id="results"></div>
+	<div align="center">Time Left <span id="time"></span></div></div>
+	<script type="text/javascript">
+	</script>
+
+</body>
+</html>

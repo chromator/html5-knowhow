@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <script type="text/javascript" src="./js/jquery-1.10.1.js"></script>  
+	 <script src="./js/jquery.js"></script>
+	<script type="text/javascript" src="./js/jquery.validate.js"></script>
+	<script type="text/javascript" src="./js/dbhandler.js"></script>
+	<script type="text/javascript">
+        $(document).ready(function () {
+		
+		 if (!sessionStorage['counter'] ) {
+				sessionStorage.setItem("counter", "1");
+		}
+		
+		 // alert("Button pressed 1");
+		  
+			$("#btnLogin").click(function (event) {
+				event.preventDefault();
+				 var userId = $("#txtUserId").val();
+				var userPassword = $("#txtPassword").val();
+				//alert("userId=="+userId+" userPassword="+userPassword);
+				//alert(username+" "+password+" "+emailId);
+				var success=verifyUser(userId,function(password)
+				{
+					//alert(password);
+					if(userPassword == password)
+					{
+						$( "#errormsg" ).hide();
+						location.href = "./home.html";  
+						
+					}else
+					{
+						$( "#errormsg" ).show();
+					}
+				}, function(e)
+				{
+					$( "#errormsg" ).show();
+				});
+				
+			});
+			$("#loginForm").validate({
+    		
+				// Specify the validation error messages
+				messages: {
+					txtUserId: "Please enter a valid email address",
+					txtPassword: {
+						required: "Please provide a password",
+						minlength: "Your password must be at least 5 characters long"
+					}
+					
+					
+				},
+				 tooltip_options: {
+					thefield: { placement: 'left' }
+				},
+				submitHandler: function(form) {
+					form.submit();
+				}
+         });
+        });
+		
+		
+		
+    </script>  
+	<script type="text/javascript" src="./js/jquery.mobile-1.3.1.js"></script>   
+	<link rel="stylesheet" href="./css/jquery.mobile-1.3.1.css" type="text/css" />
+	<link rel="stylesheet" href="./css/jquery.mobile.theme-1.3.1.css" type="text/css" />
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="header">
+		<h1>Login</h1>
+        </div>
+        <div data-role="content" data-theme="c"  >	
+
+						 <form id="loginForm">
+						   <p> 
+						
+								<label for="txtUserId" data-icon="u" >Your Email Id:</label>
+								<input size="30px" type="email" name="txtUserId" id="txtUserId" required="required" placeholder="mymail@mail.com"/>
+								</p>  <p> 
+								<label for="txtPassword" data-icon="p">Your password :</label>
+								<input type="password" size="30px" name="txtPassword" id="txtPassword" required="required" minlength="5" placeholder="eg. X8df!90EO"/>
+								  </p>  
+								  <p> 
+									<div id="errormsg" style="display: none">Email Id or password is incorrect</div>
+								  </P>
+								  <div class=ui-grid-a>
+
+										<div class=ui-block-a><a href="signup.html" data-role="button" data-ajax="false" />Sign Up</a></div>
+										<div class=ui-block-b> <input type="submit" id="btnLogin" value="Login" /> </div>
+								</div>
+						 </form>
+
+        </div>
+   </div>
+</body>
+</html>
