@@ -8,3 +8,6 @@ eg2a : dynamically adding members to an object
 Prg3a, Prg3b : Use of prototype for inheritance
 eg3a : Object creation similar to associative array
 Inheritance_in_JS.js : Example of inheriting member variables in JS
+
+Example explained here Stackoverflow link:
+http://stackoverflow.com/questions/14915408/javascript-parent-child-inheritance-without-using-prototype

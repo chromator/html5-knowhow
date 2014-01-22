@@ -24,9 +24,3 @@ And so now your name method is shared among all instances created instead of bei
 var per = new Person("Abe", "Lincoln", 45, "green");
 
 var obj = new Student("Abe", "Lincoln", 45, "green", "senior");
-
-
-
-
-Stackoverflow link:
-http://stackoverflow.com/questions/14915408/javascript-parent-child-inheritance-without-using-prototype
